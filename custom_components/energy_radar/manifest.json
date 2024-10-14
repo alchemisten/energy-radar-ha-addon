@@ -1,0 +1,18 @@
+{
+  "domain": "energy_radar",
+  "name": "EnergyRadar",
+  "codeowners": [
+    "@alchemisten"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "application_credentials"
+  ],
+  "documentation": "https://www.home-assistant.io/integrations/energy_radar",
+  "homekit": {},
+  "iot_class": "cloud_polling",
+  "requirements": [],
+  "ssdp": [],
+  "zeroconf": [],
+  "version": "1.0.0"
+}
