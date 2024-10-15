@@ -64,6 +64,9 @@ class EnergyRadarSensor(EnergyRadarSensorEntity, SensorEntity):
         self._attr_native_unit_of_measurement = self.sensor.unit
         self._attr_state_class = self.sensor.state_class
 
+        if self.sensor.display_unit is not None:
+            self._attr_suggested_unit_of_measurement = self.sensor.display_unit
+
     def update(self) -> None:
         """Fetch new state data for the sensor.
 

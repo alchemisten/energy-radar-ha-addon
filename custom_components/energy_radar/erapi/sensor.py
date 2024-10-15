@@ -17,6 +17,7 @@ class Sensor:
         state_class,
         manufacturer="EnergyRadar",
         field="value",
+        display_unit=None,
     ):
         """Initialize sensor."""
         self.meter_id = meter_id
@@ -25,6 +26,7 @@ class Sensor:
         self._session = session
         self.device_class = device_class
         self.unit = unit
+        self.display_unit = display_unit
         self.state_class = state_class
         self.manufacturer = manufacturer
         self.field = field

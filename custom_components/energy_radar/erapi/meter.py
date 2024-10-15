@@ -48,8 +48,9 @@ class EnergyMeter(Meter):
                 self._session,
                 "Total Import",
                 SensorDeviceClass.ENERGY,
-                UnitOfEnergy.KILO_WATT_HOUR,
+                UnitOfEnergy.WATT_HOUR,
                 SensorStateClass.TOTAL,
+                display_unit=UnitOfEnergy.KILO_WATT_HOUR,
             )
         )
         self.sensors.append(
@@ -72,8 +73,9 @@ class EnergyMeter(Meter):
                 self._session,
                 "Total Export",
                 SensorDeviceClass.ENERGY,
-                UnitOfEnergy.KILO_WATT_HOUR,
+                UnitOfEnergy.WATT_HOUR,
                 SensorStateClass.TOTAL,
+                display_unit=UnitOfEnergy.KILO_WATT_HOUR,
             )
         )
         self.sensors.append(

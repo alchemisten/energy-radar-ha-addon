@@ -68,7 +68,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: EnergyRadarConfigEntry) 
     hass.data[DOMAIN][entry.entry_id] = er_session
     hub = EnergyRadarHub(hass, Account(er_session))
 
-    _LOGGER.info(er_session.token())
+    # This is only here for debug purposes.
+    # _LOGGER.info(er_session.token())
 
     try:
         await hass.async_add_executor_job(hub.update_meters)

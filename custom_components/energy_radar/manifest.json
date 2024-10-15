@@ -11,7 +11,9 @@
   "documentation": "https://www.home-assistant.io/integrations/energy_radar",
   "homekit": {},
   "iot_class": "cloud_polling",
-  "requirements": [],
+  "requirements": [
+    "requests_oauthlib==2.0.0"
+  ],
   "ssdp": [],
   "zeroconf": [],
   "version": "1.0.0"
