@@ -96,7 +96,7 @@ class EnergyMeter(Meter):
                 self._session,
                 "Current Import",
                 SensorDeviceClass.POWER,
-                UnitOfPower.KILO_WATT,
+                UnitOfPower.WATT,
                 SensorStateClass.MEASUREMENT,
             )
         )
@@ -107,7 +107,7 @@ class EnergyMeter(Meter):
                 self._session,
                 "Current Export",
                 SensorDeviceClass.POWER,
-                UnitOfPower.KILO_WATT,
+                UnitOfPower.WATT,
                 SensorStateClass.MEASUREMENT,
             )
         )
