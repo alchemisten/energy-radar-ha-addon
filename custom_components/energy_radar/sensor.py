@@ -36,10 +36,13 @@ async def async_setup_entry(
         for sensor in meter.get_sensors()
     ]
 
+    _LOGGER.debug(
+        "Adding sensors for meters: %s", [meter.id for meter in hass.data[ER_METERS]]
+    )
+
     if not dev:
         return
 
-    _LOGGER.debug("Adding meters for sensors %s", dev)
     async_add_entities(dev, True)
 
 
@@ -72,6 +75,8 @@ class EnergyRadarSensor(EnergyRadarSensorEntity, SensorEntity):
 
         This is the only method that should fetch new data for Home Assistant.
         """
+        _LOGGER.debug("Updating sensor: %s %s", self._meter_id, self.name)
+
         try:
             self._state = self.sensor.get_value
         except EnergyRadarException as ex:

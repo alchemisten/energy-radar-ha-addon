@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from asyncio import run_coroutine_threadsafe
+
 from homeassistant import config_entries, core
 from homeassistant.components.application_credentials import AuthImplementation
 from homeassistant.helpers import config_entry_oauth2_flow
@@ -24,6 +26,14 @@ class ConfigEntryAuth(OAuthSession):
             hass, config_entry, implementation
         )
         super().__init__(self.session.token, vendor=EnergyRadar())
+
+    def refresh_tokens(self) -> dict:
+        """Refresh and return new Neato Botvac tokens."""
+        run_coroutine_threadsafe(
+            self.session.async_ensure_token_valid(), self.hass.loop
+        ).result()
+
+        return self.session.token
 
     def token(self):
         """Get session token, used for debug purposes."""
